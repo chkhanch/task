@@ -1,0 +1,41 @@
+limit: 337
+banknotes:
+  500: 0
+  200: 0
+  100: 2
+  50: 1
+  20: 2
+  10: 4
+  5: 1
+  2: 0
+  1: 2
+accounts:
+  3321:
+    name: 'Volodymyr'
+    password: 'mypass'
+    balance: 422
+  5922:
+    name: 'Iryna'
+    password: 'ho#ll_§1'
+    balance: 5301
+  0000:
+    name: 'Root'
+    password: '123'
+    balance: 10000
+menus:
+  main:
+    1: "1. Display Balance" 
+    2: "2. Withdraw"
+    3: "3. Log Out"
+  withdraw: 
+    1: "Enter Amount You Wish to Withdraw"
+    b: "or Press 'b' to Return to Main Menu."
+errors:
+  account-not-auth: "PLEASE, ENTER YOUR ACOOUNT INFORAMTION."
+  account-wrong-auth-data: "ACCOUNT NUMBER AND PASSWORD DON'T MATCH."
+  account-not-enough-money: "INSUFFICIENT FUNDS!! PLEASE ENTER A DIFFERENT AMOUNT."
+  balance-limit: 
+    1: "THE MAXIMUM AMOUNT AVAILABLE IN THIS ATM IS ₴"
+    2: ". PLEASE ENTER A DIFFERENT AMOUNT."
+  balance-bills: "THE AMOUNT YOU REQUESTED CANNOT BE COMPOSED FROM BILLS AVAILABLE IN THIS ATM. PLEASE ENTER A DIFFERENT AMOUNT."
+  unknown: "INCORRECT OPERTIONS."
