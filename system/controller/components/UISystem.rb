@@ -1,4 +1,8 @@
+path = './system/controller/components/' 
+require path+"Constans"
+
 class UISystem
+  include Actions
   def initialize (menus, errorsList)
     @main = menus["main"]
     @withdraw = menus["withdraw"]
@@ -20,17 +24,17 @@ class UISystem
   end
 
   def withwardMenu
-    displayWithdraw
+    displayWithdrawMenu
     action = inputAction("Put value: ")
     case action
-    when 'b'
-      return "main"
+    when BACK_TO_MM_ACTION 
+      return MAIN_MENU_ACTION
     else
       value = action.to_i
       if value > 0
         return value
       else
-        return "incorrectValue"
+        return UNCORRECT_VALUE_ACTION
       end
     end
   end
@@ -40,11 +44,11 @@ class UISystem
     action = inputAction("Please Choose From the Following Options: ")
     case action.to_i 
     when 1 
-      return "balance"
+      return BALANCE_ACTION 
     when 2 
-      return "withward"
+      return WITHWARD_MENU_ACTION
     when 3 
-      return "authorization"
+      return AUTH_ACTION 
     end
   end
 
@@ -71,7 +75,7 @@ class UISystem
     displayMenu(@main, title)
   end
 
-  private def displayWithdraw(title = "Menu: ")
+  private def displayWithdrawMenu(title = "Menu: ")
     displayMenu(@withdraw, title)
   end
 
@@ -80,18 +84,18 @@ class UISystem
     menuItems.each { |keyItem, menuItem| puts " #{menuItem}" }
   end
 
-  private def inputID(pharse = "login: ")
-    print pharse
+  private def inputID(phrase = "login: ")
+    print phrase
     return gets.chomp.to_i
   end
 
-  private def inputPass(pharse = "password: ")
-    print pharse
+  private def inputPass(phrase = "password: ")
+    print phrase
     return gets.chomp
   end
 
-  private def inputAction (pharse = "actions: ")
-    print pharse
+  private def inputAction (phrase = "actions: ")
+    print phrase
     return  gets.chomp
   end
 

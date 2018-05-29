@@ -10,7 +10,7 @@ class DB
   end
 
   def extract (name)
-    return config[name]
+    return @config[name]
   end
 
   def extractAll

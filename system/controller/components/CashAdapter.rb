@@ -31,10 +31,10 @@ class CashAdapter
 
     cash = @cash.clone  
     calc = changecash(value, cash) 
-    resulte = calc ? calc : []
+    result = calc ? calc : []
 
-    if resulte[0] == 0 
-      @bufferState = resulte[1]
+    if result[0] == 0 
+      @bufferState = result[1]
       return true
     else
       return Error.new(@cNodeWdEror)
@@ -47,17 +47,17 @@ class CashAdapter
   end
 
   private def changecash (value, cash)
-    posiable = false
+    possible = false
     if value > 0 && !cash.empty?
       cash.detect { |node, val| 
         if node <= value
           value -= node
           cash[node] -= 1
           cash = update(cash)
-          posiable = true
+          possible = true
         end
       }
-      posiable ? changecash(value, cash): false
+      possible ? changecash(value, cash): false
     else
       return [value, cash]
     end
