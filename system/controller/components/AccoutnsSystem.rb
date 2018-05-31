@@ -5,7 +5,7 @@ class AccoutnsSystem
   
   def initialize(accounts)
     
-    currentUser = []
+    @currentUser = []
   
     @accounts = accounts
 
